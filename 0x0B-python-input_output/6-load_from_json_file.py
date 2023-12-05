@@ -1,8 +1,16 @@
 #!/usr/bin/python3
-"""Defines a text file-reading function."""
+"""Module containing the function load_from_json_file"""
+import json
 
 
-def read_file(filename=""):
-    """Print the contents of a UTF8 text file to stdout."""
-    with open(filename, encoding="utf-8") as f:
-        print(f.read(), end="")
+def load_from_json_file(filename):
+    """Creates an Object from a “JSON file”.
+
+    Args:
+        filename (str): name of the file.
+
+    Returns:
+        object: object.
+    """
+    with open(filename, 'r', encoding="utf-8") as f:
+        return json.load(f)
